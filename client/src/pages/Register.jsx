@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Forminput from "../components/Forminput";
+import { useAppContext } from "../context/appContext";
 
 const initialState = {
   name: "",
