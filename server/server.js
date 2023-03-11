@@ -14,7 +14,7 @@ app.get('/',(req,res) => {
 app.use(express.json())
 
 //port
-const port = process.env.PORT || 5006
+const port = process.env.PORT || 5008
 //routes
 app.use('/api/v1/auth',authRoute)
 //morgan

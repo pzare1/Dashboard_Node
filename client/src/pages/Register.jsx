@@ -13,12 +13,16 @@ function Register() {
   const [values, setValues] = useState(initialState);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+    const {name , value} = e.target;
+    setValues({...values,[name]: value})
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const{name,email,password,isMember} = values;
+    if(!email || !password || (!isMember && !name)){
+      return
+    }
     console.log(values);
   };
 

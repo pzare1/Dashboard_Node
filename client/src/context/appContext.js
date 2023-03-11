@@ -1,11 +1,13 @@
 import React, { useState, useContext, useReducer } from 'react';
+import reducer from './reducers';
 const initialState = {
-    
+    user: null,
+    token: null
 }
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-    const [state, setstate] = useState(initialState);
+    const [state, dispatch] = useReducer(reducer,initialState);
     return(
         <>
             <AppContext.Provider value={{...state}}>
