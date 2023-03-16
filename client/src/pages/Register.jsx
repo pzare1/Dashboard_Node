@@ -11,6 +11,7 @@ const initialState = {
 
 function Register() {
   const [values, setValues] = useState(initialState);
+  const {registerUser} = useAppContext()
 
   const handleChange = (e) => {
     const {name , value} = e.target;
@@ -23,7 +24,12 @@ function Register() {
     if(!email || !password || (!isMember && !name)){
       return
     }
-    console.log(values);
+    const currentUser  = {name,email,password} 
+    if(isMember){
+      console.log('already is a member')
+    }else{
+      registerUser(currentUser)
+    }
   };
 
   const toggleMember = () => {
